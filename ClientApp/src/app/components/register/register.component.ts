@@ -12,6 +12,8 @@ import { User } from 'src/app/shared/models/user.model';
 
 export class RegisterComponent implements OnInit {
 
+  user: User;
+
   constructor(private service: UserService) {}
 
   ngOnInit(): void {
@@ -19,9 +21,9 @@ export class RegisterComponent implements OnInit {
 
   registerUser(username: string, email: string, password: string) {
     console.log(username, email, password);
-    const user = User{username: username, email: email, password: password};
-    console.log(user);
-    this.service.registerUser({username, email, password} as User)
-    .subscribe();
+
+    const user = new User(username, email, password);
+    console.log(new User(username, email, password));
+    this.service.registerUser(user).subscribe();
   }
 }
