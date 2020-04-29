@@ -22,4 +22,5 @@ export class UserService {
   registerUser(user: User): Observable<User>{
     return this.http.post<User>(this.rootUrl + this.userUrl, user, this.httpOptions).pipe();
   }
+  
 }

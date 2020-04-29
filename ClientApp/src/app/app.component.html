@@ -1,8 +1,14 @@
-<div>
-  <app-register></app-register>
+<!-- nav -->
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+    <ul class='nav nav-pills'>
+      <li><a class="nav-link" >Home</a></li>
+      <li><a class="nav-link" [routerLink]="['/login']">Login</a></li>
+      <li><a class="nav-link" [routerLink]="['/register']">Register</a></li>
+    </ul>
+</nav>
+
+
 
   <!-- Footer -->
-  <app-footer></app-footer>
-</div>
 
 <router-outlet></router-outlet>
